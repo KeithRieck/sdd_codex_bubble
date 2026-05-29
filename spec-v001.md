@@ -37,12 +37,12 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 - Spawn mix includes 10% chance of `ShrinkBubble`; non-shrink sizes are range/distribution-based.
 - Bubble movement speed for spawned bubbles is randomized between 50 and 150 pixels per second.
 - Scenario restart after win/non-final death includes a 2-second pause and size reset to 30.
-- HUD is displayed outside the play field.
+- HUD is displayed outside the play field, positioned at the top-left area to the left of the game field.
 - Input handling focuses on pointer down (mouse-down/touch) behavior for player movement target updates.
 - Tech stack is Phaser via CDN plus local ES modules.
 - PWA behavior depends on service worker availability and browser support.
-- [NEEDS_INPUT:target_fps_or_performance_budget]
-- [NEEDS_INPUT:accessibility_requirements]
+- There are no hard performance limits for this project.
+- There are no accessibility requirements for this project.
 
 ## Acceptance Criteria
 1. WHEN the game initializes THEN the system SHALL instantiate Phaser with an 800x600 play area, include `BootScene`, `PreloaderScene`, and `GameScene` in that order, and use a dark gray outer background color.
@@ -61,7 +61,8 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 14. WHEN spawning a bubble IF current count is below target THEN the system SHALL place the bubble within world bounds, SHALL use velocity magnitude randomized between 50 and 150 pixels per second, SHALL enforce minimum spawn separation from the player, and SHALL assign a 10% spawn probability to `ShrinkBubble`.
 15. WHEN the application is loaded in a browser supporting service workers THEN the system SHALL attempt to register `/service-worker.js` on window load and SHALL continue functioning if registration fails.
 16. WHEN the service worker installs and activates THEN the system SHALL cache declared core assets and SHALL serve cached responses when available before falling back to network.
-18. WHEN HUD elements are rendered THEN the system SHALL position score/lives/level indicators outside the play field.
+17. WHEN HUD elements are rendered THEN the system SHALL position score/lives/level indicators outside the play field.
+18. WHEN HUD elements are rendered THEN the system SHALL display score, level, and lives in 14pt sans-serif font at the top of the screen to the left of the game field.
 19. WHEN the player transitions between levels due to win or non-final death THEN the system SHALL preserve score and SHALL increment level number on each new level.
 20. WHEN the whole game restarts after game over THEN the system SHALL reset score to 0, SHALL reset level to 1, and SHALL reset bubble count to 10.
 
