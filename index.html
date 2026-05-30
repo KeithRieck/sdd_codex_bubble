@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#222222" />
+    <title>Bubble Game</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #222;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #app {
+        width: 100%;
+        max-width: 920px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
