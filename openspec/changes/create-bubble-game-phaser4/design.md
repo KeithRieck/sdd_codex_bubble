@@ -17,8 +17,8 @@ This project targets a static-site browser runtime and currently contains `spec-
 
 ## Decisions
 
-1. Phaser 4 with no-build ES module entrypoint.
-- Rationale: satisfies requested engine/version and repository constraints.
+1. Phaser 4 loaded by CDN script tag in `index.html`, with local game code in ES modules using the global `Phaser` object.
+- Rationale: satisfies requested engine/version and repository constraints while keeping Phaser loading centralized and avoiding CDN imports inside application JavaScript modules.
 - Alternative considered: Phaser 3 compatibility layer; rejected because requirement is explicitly Phaser 4.
 
 2. Three-scene pipeline: `BootScene -> PreloaderScene -> GameScene`.

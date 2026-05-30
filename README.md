@@ -15,3 +15,5 @@ Previously I'd created this [bubble game](https://github.com/KeithRieck/sdd_kiro
     * `Create the spec, proposal, design, and tasks files.  Exit explore mode.`
 3. In Codex, execute:
     * `$openspec-apply`
+    * `The Phaser library should be imported from a CDN using a script tag within index.html.  It should not be imported via the CDN from any of the Javascript code.  Change the code.  Also, make any necessary corresponding changes to the design or spec files. `
+    

@@ -1,4 +1,3 @@
-import Phaser from "https://cdn.jsdelivr.net/npm/phaser@4/dist/phaser.esm.js";
 import { PlayerBubble } from "../game/PlayerBubble.js";
 import { EnemyBubble } from "../game/EnemyBubble.js";
 import { ShrinkBubble } from "../game/ShrinkBubble.js";

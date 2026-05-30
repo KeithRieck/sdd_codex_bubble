@@ -7,6 +7,10 @@ The system SHALL initialize a Phaser 4 game instance with an 800x600 play area, 
 - **WHEN** the application is loaded in a compatible browser
 - **THEN** the system initializes Phaser 4 with BootScene first and transitions BootScene to PreloaderScene and then GameScene.
 
+#### Scenario: Phaser loading source
+- **WHEN** the application loads Phaser 4
+- **THEN** Phaser is loaded via a CDN `<script>` tag in `index.html` and application JavaScript modules SHALL use the global `Phaser` object without importing Phaser from a CDN URL inside module code.
+
 ### Requirement: Asset Loading and World Setup
 The system SHALL load required logo/image assets from `assets/images/` and required audio assets from `assets/audio/`, then initialize a black game world with white border and a player bubble at center with size 30.
 

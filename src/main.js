@@ -2,8 +2,6 @@ import { BootScene } from "./scenes/BootScene.js";
 import { PreloaderScene } from "./scenes/PreloaderScene.js";
 import { GameScene } from "./scenes/GameScene.js";
 
-import Phaser from "https://cdn.jsdelivr.net/npm/phaser@4/dist/phaser.esm.js";
-
 const config = {
   type: Phaser.AUTO,
   parent: "app",
