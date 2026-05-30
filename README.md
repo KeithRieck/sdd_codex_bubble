@@ -8,3 +8,8 @@ Previously I'd created this [bubble game](https://github.com/KeithRieck/sdd_kiro
 
 ## First Iteration.
 1. Execute `openspec init`.
+2. In Codex, execute: 
+    * `$openspec-explore Create a bubble game based on spec-v001.md`
+    * `This game should use the Phaser version 4 library and use the $phaser-game conventions.`
+    * `Use the sound files under assets/audio .  Put any image files under assets/images .`
+    * `Create the spec, proposal, design, and tasks files.  Exit explore mode.`

@@ -1,6 +1,6 @@
 # Project Spec
 ## Context
-This project is a browser-based Phaser 3 game where the player controls a bubble that grows by consuming smaller bubbles and avoids larger or equal bubbles. The game runs as an ES module app with no build step, starts through a scene pipeline (`BootScene` -> `PreloaderScene` -> `GameScene`), and includes PWA support through `manifest.json` and `service-worker.js`.
+This project is a browser-based Phaser 4 game where the player controls a bubble that grows by consuming smaller bubbles and avoids larger or equal bubbles. The game runs as an ES module app with no build step, starts through a scene pipeline (`BootScene` -> `PreloaderScene` -> `GameScene`), and includes PWA support through `manifest.json` and `service-worker.js`.
 
 Repository evidence shows a gameplay loop centered on `GameScene`, shared entity behavior through an abstract `Bubble` class, autonomous enemy movement/spawning, a special `ShrinkBubble` mechanic, and a HUD for score/lives/level.
 
