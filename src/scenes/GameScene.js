@@ -103,10 +103,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   keepInsidePlayerWorld() {
-    const minX = WORLD.x + this.player.size;
-    const maxX = WORLD.x + WORLD.width - this.player.size;
-    const minY = WORLD.y + this.player.size;
-    const maxY = WORLD.y + WORLD.height - this.player.size;
+    const minX = WORLD.x + this.player.radius;
+    const maxX = WORLD.x + WORLD.width - this.player.radius;
+    const minY = WORLD.y + this.player.radius;
+    const maxY = WORLD.y + WORLD.height - this.player.radius;
     this.player.setPosition(
       Phaser.Math.Clamp(this.player.x, minX, maxX),
       Phaser.Math.Clamp(this.player.y, minY, maxY),

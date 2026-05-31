@@ -19,4 +19,5 @@ Previously I'd created this [bubble game](https://github.com/KeithRieck/sdd_kiro
 4. In Codex, execute:
     * `The PlayerBubble should always be white.  The EnemyBubbles should have random pastel colors.  The ShrinkBubbles should be saturated red.`
     * `Player input should come from drag events as well as mouse-down events.`
+    * `You are incorrectly setting the radius when you should be diameter of all circles and bubbles.`
     * `Sync code changes to all documents.`

@@ -9,13 +9,17 @@ export class Bubble {
     this.vx = config.vx ?? 0;
     this.vy = config.vy ?? 0;
 
-    this.sprite = scene.add.circle(this.x, this.y, this.size, this.color, 1);
+    this.sprite = scene.add.circle(this.x, this.y, this.radius, this.color, 1);
     this.sprite.setStrokeStyle(2, 0xffffff, 0.85);
+  }
+
+  get radius() {
+    return this.size / 2;
   }
 
   setSize(newSize) {
     this.size = newSize;
-    this.sprite.setRadius(newSize);
+    this.sprite.setRadius(this.radius);
   }
 
   setVelocity(vx, vy) {
@@ -40,10 +44,10 @@ export class Bubble {
   }
 
   constrainToWorld(bounds) {
-    const minX = bounds.minX + this.size;
-    const maxX = bounds.maxX - this.size;
-    const minY = bounds.minY + this.size;
-    const maxY = bounds.maxY - this.size;
+    const minX = bounds.minX + this.radius;
+    const maxX = bounds.maxX - this.radius;
+    const minY = bounds.minY + this.radius;
+    const maxY = bounds.maxY - this.radius;
 
     if (this.x < minX) {
       this.x = minX;
@@ -71,7 +75,7 @@ export class Bubble {
   }
 
   overlaps(other) {
-    return this.distanceTo(other) <= this.size + other.size;
+    return this.distanceTo(other) <= this.radius + other.radius;
   }
 
   destroy() {
