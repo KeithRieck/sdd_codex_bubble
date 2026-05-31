@@ -21,3 +21,4 @@ Previously I'd created this [bubble game](https://github.com/KeithRieck/sdd_kiro
     * `Player input should come from drag events as well as mouse-down events.`
     * `You are incorrectly setting the radius when you should be diameter of all circles and bubbles.`
     * `Sync code changes to all documents.`
+5. In Codex, execute:  `$openspec-archive`
