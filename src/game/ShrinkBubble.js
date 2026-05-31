@@ -5,7 +5,7 @@ export class ShrinkBubble extends Bubble {
     super(scene, {
       ...config,
       isAutonomous: true,
-      color: 0xf5b041,
+      color: 0xff0000,
     });
     this.isShrinkBubble = true;
   }

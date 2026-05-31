@@ -48,14 +48,25 @@ export class GameScene extends Phaser.Scene {
   }
 
   bindInput() {
+    const updatePlayerTarget = (pointer) => {
+      const targetX = Phaser.Math.Clamp(pointer.x, WORLD.x, WORLD.x + WORLD.width);
+      const targetY = Phaser.Math.Clamp(pointer.y, WORLD.y, WORLD.y + WORLD.height);
+      this.player.setTarget(targetX, targetY);
+    };
+
     this.input.on("pointerdown", (pointer) => {
       if (this.isGameOver) {
         this.resetGameState();
         return;
       }
-      const targetX = Phaser.Math.Clamp(pointer.x, WORLD.x, WORLD.x + WORLD.width);
-      const targetY = Phaser.Math.Clamp(pointer.y, WORLD.y, WORLD.y + WORLD.height);
-      this.player.setTarget(targetX, targetY);
+      updatePlayerTarget(pointer);
+    });
+
+    this.input.on("pointermove", (pointer) => {
+      if (this.isGameOver || !pointer.isDown) {
+        return;
+      }
+      updatePlayerTarget(pointer);
     });
   }
 

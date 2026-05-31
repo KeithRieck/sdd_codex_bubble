@@ -19,7 +19,7 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 - Expanding platform targets beyond modern browser/PWA.
 
 ## Actors
-- Player: Uses mouse/touch pointer input to direct the player bubble.
+- Player: Uses mouse/touch/drag pointer input to direct the player bubble.
 - Game Scene Runtime: Executes frame updates, collisions, spawning, and transitions.
 - Spawn System: Generates AI and shrink bubbles with distribution, spacing, and velocity constraints.
 - Collision System: Detects overlap and returns collision resolution intent.
@@ -38,7 +38,7 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 - Bubble movement speed for spawned bubbles is randomized between 50 and 150 pixels per second.
 - Scenario restart after win/non-final death includes a 2-second pause and size reset to 30.
 - HUD is displayed outside the play field, positioned at the top-left area to the left of the game field.
-- Input handling focuses on pointer down (mouse-down/touch) behavior for player movement target updates.
+- Input handling focuses on pointer down and pointer drag (mouse-down/touch/drag) behavior for player movement target updates.
 - Tech stack is Phaser via CDN plus local ES modules.
 - PWA behavior depends on service worker availability and browser support.
 - There are no hard performance limits for this project.
@@ -49,7 +49,7 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 2. WHEN `BootScene` runs THEN the system SHALL load the logo asset and SHALL transition to `PreloaderScene`.
 3. WHILE `PreloaderScene` is active THEN the system SHALL display the logo, SHALL show loading progress feedback, SHALL preload required audio assets (`pop`, `explosion`, `fanfare`, `shrink`), and THEN SHALL transition to `GameScene` after load completion.
 4. WHEN `GameScene` is created THEN the system SHALL render a black game-world background with a white border, SHALL create a player bubble at world center with size 30, SHALL initialize spawn and HUD systems, and SHALL populate bubbles up to the target count.
-5. WHEN pointer down input occurs (mouse-down or touch) THEN the system SHALL update the player target position and SHALL move the player toward that target each frame using size-dependent speed.
+5. WHEN pointer down input occurs (mouse-down or touch) OR pointer drag input occurs while pressed THEN the system SHALL update the player target position and SHALL move the player toward that target each frame using size-dependent speed.
 6. WHILE any bubble updates position THEN the system SHALL constrain bubble positions to the 800x600 world and SHALL apply boundary bounce behavior for autonomous bubbles.
 7. WHEN player and AI bubbles collide IF player size is greater THEN the system SHALL remove the AI bubble, SHALL increase score by consumed bubble size, SHALL grow player size using integer square-root growth capped at 100, and SHALL play `pop.wav`.
 8. WHEN player and AI bubbles collide IF player size is less than or equal to AI size THEN the system SHALL decrement lives, SHALL play `explosion.wav`, and THEN SHALL either restart scenario (if lives remain) or trigger game-over flow.
@@ -65,6 +65,7 @@ Repository evidence shows a gameplay loop centered on `GameScene`, shared entity
 18. WHEN HUD elements are rendered THEN the system SHALL display score, level, and lives in 14pt sans-serif font at the top of the screen to the left of the game field.
 19. WHEN the player transitions between levels due to win or non-final death THEN the system SHALL preserve score and SHALL increment level number on each new level.
 20. WHEN the whole game restarts after game over THEN the system SHALL reset score to 0, SHALL reset level to 1, and SHALL reset bubble count to 10.
+21. WHEN bubble visuals are rendered THEN the player bubble SHALL be white, enemy bubbles SHALL use randomized pastel colors, and shrink bubbles SHALL use saturated red.
 
 ## Risks / Trade-offs
 - Current random spawn and movement behavior can produce perceived difficulty spikes even with distribution constraints.

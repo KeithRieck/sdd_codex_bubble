@@ -13,8 +13,9 @@
 ## 3. Core Gameplay Entities and Movement
 
 - [x] 3.1 Implement reusable bubble base entity with position constraints and autonomous bounce logic for spawned bubbles.
-- [x] 3.2 Implement player bubble movement toward pointer-down target with size-based speed `max(50, 300 - size*2)`.
+- [x] 3.2 Implement player bubble movement toward pointer-down and pointer-drag target updates with size-based speed `max(50, 300 - size*2)`.
 - [x] 3.3 Implement enemy and shrink bubble variants with randomized spawn velocity magnitude between 50 and 150 px/s.
+- [x] 3.4 Implement role-based bubble visuals: white player bubble, randomized pastel enemy bubbles, and saturated red shrink bubbles.
 
 ## 4. Spawn, Collision, and Round State Systems
 

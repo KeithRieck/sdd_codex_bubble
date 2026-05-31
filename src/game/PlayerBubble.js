@@ -5,7 +5,7 @@ export class PlayerBubble extends Bubble {
     super(scene, {
       ...config,
       isAutonomous: false,
-      color: 0x4ecdc4,
+      color: 0xffffff,
     });
     this.targetX = this.x;
     this.targetY = this.y;

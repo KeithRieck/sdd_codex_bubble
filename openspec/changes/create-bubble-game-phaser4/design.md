@@ -33,7 +33,15 @@ This project targets a static-site browser runtime and currently contains `spec-
 - Rationale: centralizes round lifecycle while preserving small helper modules for entities/HUD.
 - Alternative considered: over-abstracted manager classes; rejected to avoid unnecessary complexity.
 
-5. Relative-path-first PWA setup (`service-worker.js`, manifest) and cache-first core asset retrieval.
+5. Pointer target updates on both pointer-down and pointer-drag while pressed.
+- Rationale: improves control responsiveness on mouse and touch input while retaining straightforward input rules.
+- Alternative considered: pointer-down only targeting; rejected due to less fluid control.
+
+6. Role-based color strategy in entity subclasses (player white, enemy randomized pastel, shrink saturated red).
+- Rationale: preserves OO separation and keeps visual semantics attached to bubble type.
+- Alternative considered: central color assignment in scene; rejected to keep type behavior encapsulated.
+
+7. Relative-path-first PWA setup (`service-worker.js`, manifest) and cache-first core asset retrieval.
 - Rationale: improves compatibility with static hosting and repository subpaths while maintaining offline functionality.
 - Alternative considered: network-first strategy; rejected because spec requires serving cached responses when available.
 

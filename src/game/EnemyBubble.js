@@ -5,7 +5,14 @@ export class EnemyBubble extends Bubble {
     super(scene, {
       ...config,
       isAutonomous: true,
-      color: 0x5dade2,
+      color: EnemyBubble.randomPastelColor(),
     });
+  }
+
+  static randomPastelColor() {
+    const red = 180 + Math.floor(Math.random() * 76);
+    const green = 180 + Math.floor(Math.random() * 76);
+    const blue = 180 + Math.floor(Math.random() * 76);
+    return (red << 16) | (green << 8) | blue;
   }
 }

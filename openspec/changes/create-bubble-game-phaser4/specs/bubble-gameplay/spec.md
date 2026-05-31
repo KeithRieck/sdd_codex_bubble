@@ -19,11 +19,15 @@ The system SHALL load required logo/image assets from `assets/images/` and requi
 - **THEN** it displays loading progress, preloads required assets, and starts GameScene after load completion where the world and player are created.
 
 ### Requirement: Pointer-Directed Player Movement
-The system SHALL update the player movement target on pointer down input and move the player toward that target each frame using speed `max(50, 300 - size*2)`.
+The system SHALL update the player movement target on pointer down input and on pointer drag input while pressed, and SHALL move the player toward that target each frame using speed `max(50, 300 - size*2)`.
 
 #### Scenario: Pointer movement update
 - **WHEN** mouse-down or touch pointer down occurs
 - **THEN** the player target position is updated and frame updates move the player toward that target using size-dependent speed.
+
+#### Scenario: Pointer drag movement update
+- **WHEN** the pointer is pressed and moved (drag input)
+- **THEN** the player target position is continuously updated to follow drag movement within world bounds.
 
 ### Requirement: Autonomous Bubble Movement and Bounds
 The system SHALL keep autonomous bubbles moving with velocity and SHALL enforce 800x600 boundary bounce behavior for those bubbles.
@@ -46,6 +50,13 @@ The system SHALL resolve collisions as follows: player larger than AI consumes A
 #### Scenario: Player collides with shrink bubble
 - **WHEN** player collides with a shrink bubble
 - **THEN** player size is reset to 30, the shrink bubble is removed, and `shrink.wav` is played.
+
+### Requirement: Bubble Color Roles
+The system SHALL render bubbles with role-specific colors: player bubble in white, enemy bubbles in randomized pastel colors, and shrink bubbles in saturated red.
+
+#### Scenario: Role color assignment
+- **WHEN** bubbles are created for gameplay
+- **THEN** player, enemy, and shrink bubbles are assigned their required role colors.
 
 ### Requirement: Spawn Maintenance and Distribution
 The system SHALL maintain total spawned bubbles at a target count, spawning replacements when below target, with new spawns at least 200px from player center, randomized speed between 50 and 150 px/s, and 10% spawn chance for ShrinkBubble.

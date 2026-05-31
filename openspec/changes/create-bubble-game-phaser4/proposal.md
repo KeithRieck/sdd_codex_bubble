@@ -7,6 +7,8 @@ The repository currently has a complete gameplay specification and assets but no
 - Create a no-build Phaser 4 browser game implementation that satisfies `spec-v001.md` behavior end to end.
 - Implement deterministic scene startup (`BootScene -> PreloaderScene -> GameScene`) and audio preloading from `assets/audio/`.
 - Implement gameplay systems for movement, spawning, collision outcomes, level/death restarts, and game-over reset baselines.
+- Support both pointer-down and pointer-drag input for player target updates.
+- Implement role-based bubble colors (white player, pastel enemies, saturated red shrink bubbles).
 - Implement HUD rendering outside the play field using the specified typography and displayed values.
 - Implement PWA artifacts and registration (`manifest`, `service-worker`) with cache-first behavior for declared core assets.
 - Standardize asset locations: audio under `assets/audio/`, image files under `assets/images/`.
